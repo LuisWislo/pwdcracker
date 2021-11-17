@@ -1,0 +1,31 @@
+html,body, #root {
+  height: 100%;
+}
+
+.container {
+  height: 100%;
+}
+.container .row {
+  height: 100%;
+}
+
+.centered {
+  text-align: center;
+}
+
+.almost-centered {
+  margin-top: 20vh;
+}
+
+.tight {
+  max-width: 500px;
+}
+
+.inline-danger {
+  color: red;
+  font-weight: bold;
+}
+
+p {
+  font-size: large;
+}
