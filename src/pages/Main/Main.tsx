@@ -16,6 +16,7 @@ class Main extends React.Component<any, any> {
         this.onSubmit = this.onSubmit.bind(this);
         this.back = this.back.bind(this);
         this.tick = this.tick.bind(this);
+        this.sleep = this.sleep.bind(this);
     }
 
     async onSubmit() {
@@ -30,11 +31,15 @@ class Main extends React.Component<any, any> {
         }
 
         this.setState({cur: 1, seconds: 1, interval: setInterval(this.tick, 1000)});
-        
+        await this.sleep(5000);
         let res = await axios.get('https://www.random.org/integers/?num=1&min=0&max=100&col=1&base=10&format=plain&rnd=new');
         console.log(res);
         clearInterval(this.state.interval);
         this.setState({cur: 2});
+    }
+
+    sleep(ms: any) {
+        return new Promise(resolve => setTimeout(resolve, ms));
     }
 
     back() {
